@@ -3,10 +3,19 @@ import ReactDOM from 'react-dom';
 import App from './App.jsx';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import {AppContextProvider} from './State';
+
+const RootComponent = () => {
+  return (
+    <AppContextProvider>
+      <App />
+    </AppContextProvider>
+  )
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <RootComponent />
   </React.StrictMode>,
   document.getElementById('root')
 );
